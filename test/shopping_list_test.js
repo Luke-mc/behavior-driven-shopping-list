@@ -16,7 +16,7 @@ describe('ShoppingListItem Class', function(){
   var apple;
 
   beforeEach(function(){
-    apple = new ShoppingListItem("apple", "red", false);
+    apple = new ShoppingListItem("apple", "red");
   });
 
   it ('should be a function', function(){
@@ -34,6 +34,19 @@ describe('ShoppingListItem Class', function(){
   it("should have a property named is_done", function(){
     expect(apple.is_done).to.equal(false);
   });
+
+  it("should have a constructor method that accepts 2 arguments", function(){
+    expect(apple = new ShoppingListItem("apple", "red")).to.equal(apple);
+  });
+
+   it("should have a method named check()", function(){
+    expect(apple.check).to.be.a('function');
+    expect(apple.check()).to.equal(apple.is_done = true);
+  });
+
+
+
+
 
 
 });
