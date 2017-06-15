@@ -23,9 +23,15 @@ describe('ShoppingListItem Class', function(){
     expect(shoppingListItem).to.be.a('function');
   });
 
-  it("should have a property name items", function(){
+  it("should have a property named name", function(){
     expect(apple.name).to.equal("apple");
   });
+
+  it("should have a property named description", function(){
+    expect(apple.description).to.equal("red");
+  });
+
+
 
 });
 
