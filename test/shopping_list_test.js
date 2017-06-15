@@ -44,6 +44,10 @@ describe('ShoppingListItem Class', function(){
     expect(apple.check()).to.equal(apple.is_done = true);
   });
 
+   it("should have a method named uncheck()", function(){
+    expect(apple.uncheck).to.be.a('function');
+    expect(apple.uncheck()).to.equal(apple.is_done = false);
+  });
 
 
 
