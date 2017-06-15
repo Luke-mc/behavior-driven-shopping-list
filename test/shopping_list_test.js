@@ -13,8 +13,18 @@ describe('ShoppingListItem Class', function(){
 
   var shoppingListItem = ShoppingListItem;
 
+  var apple;
+
+  beforeEach(function(){
+    apple = new ShoppingListItem("apple");
+  });
+
   it ('should be a function', function(){
     expect(shoppingListItem).to.be.a('function');
+  });
+
+  it("should have a property name items", function(){
+    expect(apple.name).to.equal("apple");
   });
 
 });
