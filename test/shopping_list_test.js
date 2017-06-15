@@ -49,6 +49,10 @@ describe('ShoppingListItem Class', function(){
     expect(apple.uncheck()).to.equal(apple.is_done = false);
   });
 
+  it("should have a method named render()", function(){
+    expect(apple.render).to.be.a('function');
+    expect(apple.render()).to.equal(`<li class="completed_${apple.is_done}"><span>${apple.name}</span> <span>${apple.description}</span></li>`);
+  });
 
 
 

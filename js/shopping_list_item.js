@@ -12,6 +12,12 @@ class ShoppingListItem{
     return this.is_done;
   }
 
+  uncheck(){
+    this.is_done = false;
+    return this.is_done;
+  }
+
 }
 
 module.exports = ShoppingListItem;
+
