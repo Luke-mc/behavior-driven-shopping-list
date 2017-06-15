@@ -16,7 +16,7 @@ describe('ShoppingListItem Class', function(){
   var apple;
 
   beforeEach(function(){
-    apple = new ShoppingListItem("apple");
+    apple = new ShoppingListItem("apple", "red", false);
   });
 
   it ('should be a function', function(){
@@ -31,6 +31,9 @@ describe('ShoppingListItem Class', function(){
     expect(apple.description).to.equal("red");
   });
 
+  it("should have a property named is_done", function(){
+    expect(apple.is_done).to.equal(false);
+  });
 
 
 });
