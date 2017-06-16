@@ -21,22 +21,13 @@ class ShoppingListItem{
   }
 
   render(){
-/*    var createLi = document.createElement("li");
-    createLi.className = "completed_" + this.is_done;
-    body.appendChild(createLi);
-    var createSpan1 = document.createElement("span");
-    createSpan1.innerHTML = this.name;
-    createLi.appendChild(createSpan1);
-    var createSpan2 = document.createElement("span");
-    createSpan2.innerHTML = this.description;
-    createLi.appendChild(createSpan2);*/
+
     return `<li class="completed_${this.is_done}"><span>${this.name}</span> <span>${this.description}</span></li>`;
   }
 
 }
 
 
-module.exports = ShoppingListItem;
 
 
 

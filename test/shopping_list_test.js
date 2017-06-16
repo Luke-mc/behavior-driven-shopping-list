@@ -1,12 +1,8 @@
-var chai = require('chai');
+
 
 var expect = chai.expect;
-
 var should = chai.should();
 
-var ShoppingListItem = require('../js/shopping_list_item.js');
-
-var ShoppingList = require('../js/shopping_list.js');
 
 
 describe('ShoppingListItem Class', function(){
@@ -67,15 +63,56 @@ describe('ShoppingList Class', function(){
     list1 = new ShoppingList();
   });
 
+  var apple;
+
+  beforeEach(function(){
+    apple = new ShoppingListItem("apple", "red");
+  });
+
   it ('should be a function', function(){
     expect(shoppingList).to.be.a('function');
   });
 
   it("should have a property named items", function(){
-    expect(list1.items).to.equal([]);
+    expect(list1.items).to.be.a("array");
+  });
+
+  it("should have a method named addItem()", function(){
+    expect(list1.addItem).to.be.a('function');
+
+  });
+
+  it("addItem() method should add that object to the items array", function(){
+    list1.addItem(apple).should.contain(apple);
+  });
+
+  it("addItem() method should not take in an argument that is not a ShoppingListItem ", function(){
+
+    expect(list1.addItem).to.throw(Error);
+  });
+
+  it("should have a method named removeItem()", function(){
+    expect(list1.removeItem).to.be.a('function');
+  });
+
+  it("removeItem() method should remove that object from the items array", function(){
+
+    list1.addItem(apple);
+    list1.removeItem(apple);
+
+    expect(list1.items).to.be.equal([]);
+
+    list1.addItem(apple);
+    list1.removeItem();
+
+    expect(list1.items).to.be.equal([]);
+  });
+
+  it("removeItem() should only remove a ShoppingListItem that exist in items array", function(){
+    expect(list1.removeItem).to.throw(Error);
   });
 
 
 
- });
+});
 
