@@ -1,1 +1,2 @@
-console.log("hello");
+/* jshint esversion: 6 */
+

@@ -55,7 +55,15 @@ describe('ShoppingListItem Class', function(){
   });
 
 
-
-
 });
+
+describe('ShoppingList Class', function(){
+
+  var shoppingList = ShoppingList;
+
+  it ('should be a function', function(){
+    expect(shoppingList).to.be.a('function');
+  });
+
+ });
 
