@@ -27,6 +27,21 @@ constructor(){
     }
   }
 
+  render(){
+    var list = [];
+
+    for(var i = 0; i < this.items.length; i++){
+
+      list.push(this.items[i].render());
+
+    }
+
+    var joined =  list.join('  ');
+
+    return `<ul> \ ${joined} \ </ul>`;
+
+  }
+
 }
 
 

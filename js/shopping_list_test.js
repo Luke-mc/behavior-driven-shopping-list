@@ -67,6 +67,7 @@ describe('ShoppingList Class', function(){
 
   beforeEach(function(){
     apple = new ShoppingListItem("apple", "red");
+    orange = new ShoppingListItem("orange", "blue");
   });
 
   it ('should be a function', function(){
@@ -118,8 +119,11 @@ describe('ShoppingList Class', function(){
 
   it("should concaetnate the result of calling render() on each item in this object's item array, wrapping it in <ul> tags", function(){
     list1.addItem(apple);
-    expect(list1.render()).to.equal(`<ul> \ <li class="completed_${apple.is_done}"> \ <span>${apple.name}</span> \ <span>${apple.description}</span> \ </li> \ </ul>`);
-  })
+    list1.addItem(orange);
+
+    expect(list1.render()).to.equal(`<ul> \ <li class="completed_${apple.is_done}"> \ <span>${apple.name}</span> \ <span>${apple.description}</span> \ </li> \ <li class="completed_${orange.is_done}"> \ <span>${orange.name}</span> \ <span>${orange.description}</span> \ </li> \ </ul>`);
+
+  });
 
 
 
