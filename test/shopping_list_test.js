@@ -100,12 +100,12 @@ describe('ShoppingList Class', function(){
     list1.addItem(apple);
     list1.removeItem(apple);
 
-    expect(list1.items).to.be.equal([]);
+    expect(list1.items).to.be.an("array").that.is.empty;
 
     list1.addItem(apple);
     list1.removeItem();
 
-    expect(list1.items).to.be.equal([]);
+    expect(list1.items).to.be.an("array").that.is.empty;
   });
 
   it("removeItem() should only remove a ShoppingListItem that exist in items array", function(){
