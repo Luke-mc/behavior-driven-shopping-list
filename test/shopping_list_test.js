@@ -67,12 +67,24 @@ describe('ShoppingList Class', function(){
     list1 = new ShoppingList();
   });
 
+  var apple;
+
+  beforeEach(function(){
+    apple = new ShoppingListItem("apple", "red");
+  });
+
   it ('should be a function', function(){
     expect(shoppingList).to.be.a('function');
   });
 
   it("should have a property named items", function(){
-    expect(list1.items).to.equal([]);
+    expect(list1.items).to.be.a("array");
+  });
+
+  it("should have a method named addItem()", function(){
+    expect(list1.addItem(apple)).to.be.a("function");
+    expect(list1.addItem(apple)).to.equal(list1.items = [apple]);
+    expect(list1.addItem(!ShoppingListItem)).to.equal(Error("error!"));
   });
 
 
