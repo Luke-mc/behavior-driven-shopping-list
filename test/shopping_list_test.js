@@ -61,9 +61,21 @@ describe('ShoppingList Class', function(){
 
   var shoppingList = ShoppingList;
 
+  var list1;
+
+  beforeEach(function(){
+    list1 = new ShoppingList();
+  });
+
   it ('should be a function', function(){
     expect(shoppingList).to.be.a('function');
   });
+
+  it("should have a property named items", function(){
+    expect(list1.items).to.equal([]);
+  });
+
+
 
  });
 
