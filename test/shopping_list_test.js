@@ -47,7 +47,7 @@ describe('ShoppingListItem Class', function(){
 
   it("should have a method named render()", function(){
     expect(apple.render).to.be.a('function');
-    expect(apple.render()).to.equal(`<li class="completed_${apple.is_done}"><span>${apple.name}</span> <span>${apple.description}</span></li>`);
+    expect(apple.render()).to.equal(`<li class="completed_${apple.is_done}"> \ <span>${apple.name}</span> \ <span>${apple.description}</span> \ </li>`);
   });
 
 
@@ -111,6 +111,16 @@ describe('ShoppingList Class', function(){
   it("removeItem() should only remove a ShoppingListItem that exist in items array", function(){
     expect(list1.removeItem).to.throw(Error);
   });
+
+  it("should have a method named render()", function(){
+    expect(list1.render).to.be.a('function');
+  });
+
+  it("should concaetnate the result of calling render() on each item in this object's item array, wrapping it in <ul> tags", function(){
+    list1.addItem(apple);
+    expect(list1.render()).to.equal(`<ul> \ <li class="completed_${apple.is_done}"> \ <span>${apple.name}</span> \ <span>${apple.description}</span> \ </li> \ </ul>`);
+  })
+
 
 
 
