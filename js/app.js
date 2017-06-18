@@ -12,6 +12,7 @@ var newList = new ShoppingList();
 var new_shopping_list_item;
 var listArray = [];
 var count = -1;
+var newItem;
 
 function add_to_shopping_list(){
   new_shopping_list_item = new ShoppingListItem(targetTitle.value, targetDescription.value);
@@ -31,14 +32,13 @@ function add_to_shopping_list(){
   for(var i = 0; i<check.length; i++){
     check[i].addEventListener("change", function(){
       if(this.checked === true){
-        listArray[count].check();
+        newList.items[count].check();
       } else if(this.checked === false){
-        listArray[count].uncheck();
+        newList.items[count].uncheck();
       }
     });
   }
-  listArray.push(new_shopping_list_item);
-  console.log(listArray);
+  console.log(newList.items);
 }
 
 targetButton.addEventListener("click", add_to_shopping_list);
