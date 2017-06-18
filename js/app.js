@@ -20,23 +20,21 @@ function add_to_shopping_list(){
   new_shopping_list_item = new ShoppingListItem(targetTitle.value, targetDescription.value);
   newList.addItem(new_shopping_list_item);
   count ++;
-  /*targetContent.innerHTML = newList.render();*/
   newLi = document.createElement("li");
   newLi.className = "completed_false";
-  //newLi.id = count;
   newLi.innerHTML = newList.items[newList.items.length - 1].render();
   targetUl.appendChild(newLi);
 
-
-/*  for(var i = 0; i<check.length; i++){*/
-    document.getElementById("checkBox " + count).addEventListener("change", function(){
+  (function(idx){
+     document.getElementById("checkBox" + idx).addEventListener("change", function(){
       if(this.checked === true){
-        newList.items[count].check();
+        newList.items[idx].check();
       } else if(this.checked === false){
-        newList.items[count].uncheck();
+        newList.items[idx].uncheck();
       }
     });
-/*  }*/
+  }(count));
+
   console.log(newList.items);
 }
 
