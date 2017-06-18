@@ -23,20 +23,20 @@ function add_to_shopping_list(){
   /*targetContent.innerHTML = newList.render();*/
   newLi = document.createElement("li");
   newLi.className = "completed_false";
-  newLi.id = count;
+  //newLi.id = count;
   newLi.innerHTML = newList.items[newList.items.length - 1].render();
   targetUl.appendChild(newLi);
 
 
-  for(var i = 0; i<check.length; i++){
-    check[i].addEventListener("change", function(){
+/*  for(var i = 0; i<check.length; i++){*/
+    document.getElementById("checkBox " + count).addEventListener("change", function(){
       if(this.checked === true){
         newList.items[count].check();
       } else if(this.checked === false){
         newList.items[count].uncheck();
       }
     });
-  }
+/*  }*/
   console.log(newList.items);
 }
 
