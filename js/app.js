@@ -10,11 +10,14 @@ var newList = new ShoppingList();
 
 
 var new_shopping_list_item;
+var listArray = [];
+var count = -1;
 
 function add_to_shopping_list(){
   new_shopping_list_item = new ShoppingListItem(targetTitle.value, targetDescription.value);
   newList.addItem(new_shopping_list_item);
   targetContent.innerHTML = newList.render();
+  count ++;
 /*  check[0].onchange = function(){
     if(this.checked){
       console.log("checked");
@@ -28,12 +31,14 @@ function add_to_shopping_list(){
   for(var i = 0; i<check.length; i++){
     check[i].addEventListener("change", function(){
       if(this.checked === true){
-        console.log(this);
+        listArray[count].check();
       } else if(this.checked === false){
-        console.log("unchecked!");
+        listArray[count].uncheck();
       }
     });
   }
+  listArray.push(new_shopping_list_item);
+  console.log(listArray);
 }
 
 targetButton.addEventListener("click", add_to_shopping_list);
