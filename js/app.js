@@ -22,6 +22,7 @@ function add_to_shopping_list(){
   count ++;
   newLi = document.createElement("li");
   newLi.className = "completed_false";
+  newLi.id = "li" + count;
   newLi.innerHTML = newList.items[newList.items.length - 1].render();
   targetUl.appendChild(newLi);
 
@@ -29,8 +30,10 @@ function add_to_shopping_list(){
      document.getElementById("checkBox" + idx).addEventListener("change", function(){
       if(this.checked === true){
         newList.items[idx].check();
+        document.getElementById("li"+idx).className = "completed_true";
       } else if(this.checked === false){
         newList.items[idx].uncheck();
+        document.getElementById("li"+idx).className = "completed_false";
       }
     });
   }(count));
